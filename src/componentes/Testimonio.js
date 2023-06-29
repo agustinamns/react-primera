@@ -1,22 +1,18 @@
 import React from "react";
 import '../hojas-de-estilo/Testimonio.css'
 
-function Testimonio(){
+function Testimonio(props){
     return(
         <div className="contenedor-testimonio">
             <img className="imagen-testimonio"
-            src={require("../imagenes/icon-1.jpg")}
+            src={require(`../imagenes/icon-${props.imagen}.jpg`)}
             />
 
             <div className='contenedor-texto-testimonio'>
-                <p className='nombre-testimonio'>emma boston</p>
-                <p className="cargo-testimonio">ingeniera de software en spotify</p>
-                <p className="texto-testimonio">Lorem imput etcetc texto random aqui, de relleno, para que haga bulto, sin sentido, sin intencion, 
-                mal escrito. Mal redactado, etc. Lorem imput etcetc texto random aqui, de relleno, para que haga bulto, sin sentido,Lorem imput etcetc texto random aqui, de relleno, para que haga bulto, sin sentido,
-                Lorem imput etcetc texto random aqui, de relleno, para que haga bulto, sin sentido,Lorem imput etcetc texto random aqui, de relleno, para que haga bulto, sin sentido,</p>
+                <p className='nombre-testimonio'>{props.nombre} en {props.pais}</p>
+                <p className="cargo-testimonio">{props.cargo} en {props.empresa}</p>
+                <p className="texto-testimonio">{props.testimonio}</p>
             </div>
-
-
         </div>
     )
 }
